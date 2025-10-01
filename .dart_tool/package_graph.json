@@ -5,7 +5,7 @@
   "packages": [
     {
       "name": "particle_connect",
-      "version": "2.1.23",
+      "version": "2.1.24",
       "dependencies": [
         "flutter",
         "json_annotation",
@@ -111,7 +111,7 @@
     },
     {
       "name": "particle_auth_core",
-      "version": "2.1.23",
+      "version": "2.1.24",
       "dependencies": [
         "flutter",
         "particle_base",

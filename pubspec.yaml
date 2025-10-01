@@ -1,6 +1,6 @@
 name: particle_connect
 description: A flutter plugin project for particle connect
-version: 2.1.23
+version: 2.1.24
 homepage: https://particle.network/
 
 environment:
@@ -11,7 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.1.6
-  particle_base: ^2.1.23
+  particle_base:
+    git:
+      url: https://github.com/c0deslinger/particle-base.git
+      ref: main
   # particle_auth_core: ^2.1.23
   particle_auth_core:
     git:

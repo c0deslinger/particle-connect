@@ -304,17 +304,18 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: ba8bbe94a839c318421922323739e4ee509ec81b
+      resolved-ref: "115d3a93dab9e42c1bf1d598a79c8c4364473031"
       url: "https://github.com/c0deslinger/particle-auth-core.git"
     source: git
-    version: "2.1.23"
+    version: "2.1.24"
   particle_base:
     dependency: transitive
     description:
-      name: particle_base
-      sha256: "3925798829b098696236cef373e5f4158c9b6165780bfd29bb8f322d4f2da461"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: main
+      resolved-ref: bbf1dc9434aac4db80a66d450c1577d083f0c75d
+      url: "https://github.com/c0deslinger/particle-base.git"
+    source: git
     version: "2.1.23"
   particle_connect:
     dependency: "direct main"
@@ -322,7 +323,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "2.1.23"
+    version: "2.1.24"
   path:
     dependency: transitive
     description:
