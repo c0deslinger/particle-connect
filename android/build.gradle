@@ -1,0 +1,74 @@
+group 'network.particle.connect_plugin.particle_connect'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.9.10'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { setUrl("https://jitpack.io") }
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    namespace = "network.particle.connect_plugin.particle_connect"
+    compileSdk 34
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        minSdkVersion 23
+        consumerProguardFiles("consumer-rules.pro")
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    def sdkVersion = "2.1.21"
+    api("network.particle:base-service:$sdkVersion")
+    api("network.particle:auth-service:$sdkVersion")
+
+    api("network.particle:connect-common:$sdkVersion")
+    api("network.particle:connect:$sdkVersion")
+    api("network.particle:connect-kit:$sdkVersion")
+    api("network.particle:connect-auth-adapter:$sdkVersion")
+    api("network.particle:connect-auth-core-adapter:$sdkVersion")
+    compileOnly("network.particle:connect-auth-core-adapter:$sdkVersion")
+    api("network.particle:connect-evm-adapter:$sdkVersion")
+    api("network.particle:connect-solana-adapter:$sdkVersion")
+    api("network.particle:connect-phantom-adapter:$sdkVersion")
+    api("network.particle:connect-wallet-connect-adapter:$sdkVersion")
+
+    implementation("com.github.xxhong:CollectsPkg:2.1.0")
+    implementation("commons-codec:commons-codec:1.15")
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.blankj:utilcodex:1.31.0")
+}
+
